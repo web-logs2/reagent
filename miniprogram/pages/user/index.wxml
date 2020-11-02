@@ -1,0 +1,2 @@
+<head_bar title="hi, {{userInfo.nickName}}" showSearch="{{false}}" />
+<bottom_menu currentTab="user" />

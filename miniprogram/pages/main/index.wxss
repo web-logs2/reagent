@@ -1,0 +1,53 @@
+@import "../../style/base.wxss";
+.content {
+  flex:1;
+  height: 700px;
+  background: #FBFDFF;
+}
+.head {
+  height: 344rpx;
+  background: linear-gradient(107.16deg, #58A6FF -9.45%, #5ECFEE 85.23%);
+}
+.type-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top:120rpx;
+  margin-bottom:80rpx;
+  justify-content: space-around;
+  padding: 0 10px;
+}
+.type-item {
+  width: 196rpx;
+  height: 138rpx;
+  background-color: #fff;
+  box-shadow: 4px 6px 19px rgba(141, 141, 141, 0.15);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  transition: all 0.2s;
+}
+.type-item .iconfont{
+  font-size: 60rpx;
+  color: #58A6FF;
+}
+.type-item-text{
+  font-size: 10px;
+  line-height: 12px;
+  color: #6A6F7D;
+  margin-top: 6rpx;
+}
+.type-item.active{
+  transform: scale(1.1);
+  background: #58A6FF;
+  box-shadow: 4px 4px 20px rgba(88, 166, 255, 0.7);
+}
+.type-item.active .iconfont {
+  color:#fff;
+}
+.type-item.active .type-item-text{
+  color: #fff;
+}

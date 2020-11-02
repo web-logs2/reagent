@@ -1,0 +1,14 @@
+<image class="bg" src="./bg.png" />
+<view class="tool-bar">
+  <view class="tool {{currentTab==='home'?'active':''}}" bindtap="onToolTap" data-tab="home">
+    <view class="iconfont iconhome-filling" />
+    <text class="tool-text">HOME</text>
+  </view>
+  <view class="tool {{currentTab==='user'?'active':''}}" bindtap="onToolTap" data-tab="user">
+    <view class="iconfont iconyonghu" />
+    <text class="tool-text">PERSONAL</text>
+  </view>
+</view>
+<view class="add" bindtap="onAdd">
+  <text class="iconfont iconadd-bold"></text>
+</view>

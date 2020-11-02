@@ -1,0 +1,8 @@
+<view class="item">
+  <view class="item-img-wrapper">
+    <image class="item-img" src="./test.jpg"></image>
+  </view>
+  <view class="info">
+    <text class="title">测试试剂</text>
+  </view>
+</view>

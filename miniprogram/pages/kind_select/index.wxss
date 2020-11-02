@@ -1,0 +1,36 @@
+@import "../../style/base.wxss";
+.content {
+  flex:1;
+  background: #FBFDFF;
+}
+.head {
+  height: 344rpx;
+  background: linear-gradient(107.16deg, #58A6FF -9.45%, #5ECFEE 85.23%);
+}
+.kinds {
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+}
+.type-item {
+  height: 138rpx;
+  background-color: #fff;
+  box-shadow: 4px 6px 19px rgba(141, 141, 141, 0.15);
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+  transition: all 0.2s;
+  padding: 0 30rpx;
+  margin: 20rpx;
+}
+.type-item .iconfont{
+  font-size: 60rpx;
+  color: #58A6FF;
+}
+.type-item-text{
+  font-size: 14px;
+  color: #6A6F7D;
+  margin-left: 16rpx;
+}

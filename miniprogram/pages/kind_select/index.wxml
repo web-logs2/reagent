@@ -1,0 +1,7 @@
+<head_bar title="添加点啥" showSearch="{{false}}" />
+<view class="kinds">
+  <view wx:for="{{kinds}}" class="type-item" bindtap="onKindChange" data-index="{{index}}">
+    <view class="iconfont {{item.icon}}"></view>
+    <text class="type-item-text">{{item.text}}</text>
+  </view>
+</view>

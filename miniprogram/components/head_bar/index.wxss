@@ -1,0 +1,58 @@
+@import "../../style/iconfont/iconfont.wxss";
+
+.container {
+  height: 344rpx;
+  background: linear-gradient(107.16deg, #58A6FF -9.45%, #5ECFEE 85.23%);
+  position: relative;
+}
+
+.title{
+  position: absolute;
+  top: 180rpx;
+  left: 46rpx;
+  font-size: 30px;
+  line-height: 36px;
+  color: #FFFFFF;
+  font-weight: bold;
+}
+
+.search_bar {
+  position: absolute;
+  bottom:-50rpx;
+  left:45rpx;
+  width: 660rpx;
+  height: 100rpx;
+  background-color: #FFFFFF;
+  box-shadow: 3px 5px 20px rgba(182, 182, 182, 0.15);
+  border-radius: 50rpx;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  padding-left: 50rpx;
+  padding-right: 50rpx;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.back {
+  position: absolute;
+  padding: 20rpx;
+  top: 70rpx;
+  left: 26rpx;
+}
+.back .iconfont {
+  color:#fff;
+  font-size: 48rpx;
+}
+.placeholder {
+  color: #D2D2D2;
+}
+.iconsearch {
+  width: 14px;
+  height: 14px;
+  margin-right: 10px;
+  color:#D2D2D2;
+}
+.search_input {
+  flex:1;
+}

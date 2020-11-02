@@ -1,0 +1,32 @@
+@import './iconfont/iconfont.wxss';
+
+button {
+  width: auto !important;
+  background: #58A6FF;
+  height: 100rpx;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-weight: normal;
+  margin-left:44rpx !important;
+  margin-right:44rpx !important;
+}
+button.button-hover {
+  background-color:#58A6FF;
+  color: #FFFFFF;
+  opacity: 0.9;
+}
+button.ghost {
+  background-color: #fff;
+  border:1px solid #58A6FF;
+  color:  #58A6FF;
+}
+
+form button,form .input {
+  margin-top: 40px;
+}

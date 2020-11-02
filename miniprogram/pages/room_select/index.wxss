@@ -1,0 +1,10 @@
+@import "../../style/base.wxss";
+.banner{
+  width: 572rpx;
+  height: 554rpx;
+  margin-top: 200rpx;
+  margin-left: 60rpx;
+}
+button {
+  margin-top:20px;
+}

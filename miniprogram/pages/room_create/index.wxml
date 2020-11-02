@@ -1,0 +1,7 @@
+<head_bar title="创建实验室" showSearch="{{false}}" />
+<form bindsubmit="onSubmit">
+  <view class="input">
+    <input name="name" placeholder="名称" />
+  </view>
+  <button formType="submit">确定</button>
+</form>
