@@ -1,0 +1,20 @@
+<head_bar title="{{title}}">
+    <image class="edit" src="./edit.png" bindtap="onEdit" />
+</head_bar>
+<view class="content">
+    <view class="head">
+        <image class="thumb" src="{{info.thumbnail}}"></image>
+        <view class="info">
+            <text class="title">{{info.chinese_name}}</text>
+            <text class="title2">{{info.english_name}}</text>
+            <view class="title-row">
+                <text class="title-state-{{info.state||'Normal'}}">{{info.state||'Normal'}}</text>
+                <text>{{info.size}}</text>
+            </view>
+        </view>
+    </view>
+    <view wx:for="{{propsList}}" class="item">
+        <text class="item-label">{{item.k}}</text>
+        <text class="item-text">{{item.v}}</text>
+    </view>
+</view>

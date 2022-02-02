@@ -1,0 +1,15 @@
+<head_bar title="{{room_info.name}}"  />
+<text class="label">成员列表</text>
+<view class="item-list">
+      <view wx:for="{{users}}" class="item">
+        <image class="item-img" src="{{item.avatarUrl}}" />
+        <text class="item-text">{{item.nickName}}</text>
+    </view>
+</view>
+<button bindtap="modalShow">Invite members</button>
+<button class="danger" bindtap="onLeave">Leave out</button>
+<modal  confirm-text="confirm"  hidden="{{qrModalHidden}}" bindconfirm="modalHide" no-cancel="{{true}}">
+  <view class="qr-wrapper">
+    <image class="qrimg" src="{{qrInfo.img}}" />
+  </view>
+</modal>

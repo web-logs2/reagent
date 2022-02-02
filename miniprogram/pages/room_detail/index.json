@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "head_bar":"../../components/head_bar",
+    "bottom_menu":"../../components/bottom_menu"
+  }
+}

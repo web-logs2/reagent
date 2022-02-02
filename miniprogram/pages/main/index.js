@@ -1,33 +1,46 @@
-//index.js
+import {kinds} from '../../constance/kind'
+import { getUserInfo } from '../../utils/user'
 const app = getApp()
-
+const db = wx.cloud.database()
 Page({
   data: {
-    currentKind:0,
-    kinds:[
-      {
-        icon:"iconhuaxueshiyan-1",
-        text:"试剂"
-      },
-      {
-        icon:"iconhuaxueshiyan-",
-        text:"仪器"
-      },
-      {
-        icon:"iconhuaxueshiyan-2",
-        text:"耗材"
-      },
-    ],
-    items:[
-      {},{},{},{},{},{}
-    ]
+    currentKind: 'reagent',
+    kinds: kinds,
+    items: []
   },
-  onLoad(){
+  onLoad() {
+    this.checkUser()
   },
-  onKindChange(e){
-    const index=e.currentTarget.dataset.index
-    this.setData({
-      currentKind:index
+  async checkUser(){
+    const userInfo=await getUserInfo()
+    if (!userInfo.roomID) {
+      wx.showModal({
+        title: 'Welcome',
+        content: 'It looks like you haven’t joined the lab yet',
+        confirmText: 'Join one',
+        cancelText: 'Later',
+        success: function (res) {
+          if (res.confirm) {
+            wx.navigateTo({
+              url: '/pages/room_select/index',
+            })
+          }
+        }
+      })
+      return
+    }
+  },
+  onItemTap(e) {
+    const index = e.currentTarget.dataset.index
+    const item = this.data.items[index]
+    wx.navigateTo({
+      url: `/pages/item_detail/index?id=${item._id}`,
+    })
+  },
+  goSearch(e) {
+    const {kind} = e.currentTarget.dataset
+    wx.navigateTo({
+      url: `/pages/search_result/index?kind=${kind}`,
     })
   }
 })

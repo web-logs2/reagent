@@ -1,0 +1,22 @@
+<view class="wrapper">
+  <head_bar title="{{currentKindText}}" searchStatus="input" bindsearchinput="onSearch" />
+  <view class="item-list">
+    <view class="item" wx:for="{{items}}" bindtap="onItemTap" data-index="{{index}}">
+      <view class="item-img-wrapper">
+        <image class="item-img" src="{{item.info.thumbnail}}"></image>
+      </view>
+      <view class="info">
+        <text class="title">{{item.info.chinese_name}}</text>
+        <text class="title2">{{item.info.english_name}}</text>
+        <view class="title-row">
+          <text class="title-state-{{item.info.state||'Normal'}}">{{item.info.state||'Normal'}}</text>
+            <text>{{item.info.size}}</text>
+        </view>
+      </view>
+    </view>
+    <view wx:if="{{loading}}" class="loading">
+      <text class="loading-text">loading...</text>
+    </view>
+  </view>
+  <bottom_menu />
+</view>

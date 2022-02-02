@@ -1,5 +1,19 @@
-export function isIndexPage(){
-  const pages=getCurrentPages()
-  const lastPage=pages[pages.length-1]
-  return lastPage.route==="pages/main/index"||lastPage.route==="pages/user/index"
+import url from 'url'
+import querystring from 'querystring'
+
+
+export function isTopPage() {
+  const pages = getCurrentPages()
+  return pages.length <= 1
+}
+
+export function getQuery(str) {
+  let query = {}
+  try {
+    const u = url.parse(str)
+    query = querystring.parse(u.query)
+  } catch (err) {
+    //
+  }
+  return query
 }

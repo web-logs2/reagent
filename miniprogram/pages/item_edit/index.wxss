@@ -1,0 +1,32 @@
+.image-upload {
+  width: 80px;
+  height: 80px;
+  border:1px dashed #46A3FA;
+  border-radius: 10px;
+}
+
+.input {
+  border-bottom: 1px solid #ccc;
+  height: 40px;
+}
+.checkbox-group {
+  width: 100%;
+}
+.label {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.row {
+  padding: 20px 20px 0 20px;
+}
+
+.submit {
+  margin-top: 20px;
+}
+.content {
+  padding-bottom: 40px;
+}
+.weui-cell {
+  padding: 10px 0;
+}

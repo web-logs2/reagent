@@ -1,24 +1,12 @@
 const db = wx.cloud.database()
 const app = getApp()
 
-export function getUserInfo(param) {
+export function getUserInfoFromWX(param) {
     return new Promise((resolve, reject) => {
         wx.getSetting({
             success(res) {
                 if (!res.authSetting["scope.userInfo"]) {
-                    wx.authorize({
-                        scope: 'scope.userInfo',
-                        success() {
-                            wx.getUserInfo({
-                                ...param,
-                                success: res => {
-                                    resolve(res.userInfo)
-                                },
-                                fail: reject
-                            })
-                        },
-                        fail: reject
-                    })
+                    reject("no scope.userInfo")
                 } else {
                     wx.getUserInfo({
                         ...param,
@@ -35,36 +23,71 @@ export function getUserInfo(param) {
     })
 }
 
-export async function login() {
-    let userInfo
-    const metaInfo = await wx.cloud.callFunction({
-        name: 'login'
-    })
-    const { openid, appid } = metaInfo.result
-    app.globalData.openid = openid
-    app.globalData.appid = appid
+let openid, appid, userInfo
+
+export async function getMetaInfo() {
+    if (!openid || !appid) {
+        const metaInfo = await wx.cloud.callFunction({
+            name: 'login'
+        })
+        openid = metaInfo.result.openid
+        appid = metaInfo.result.appid
+    }
+    return {
+        openid,
+        appid
+    }
+}
+
+export async function updateUserInfo() {
     const userReq = await db.collection("user").where({
         _openid: openid,
     }).get()
     if (userReq.data && userReq.data[0]) {
         userInfo = userReq.data[0]
     }
+}
+
+export async function getUserInfo() {
+    await getMetaInfo()
     if (!userInfo) {
-        userInfo = await getUserInfo()
-        await db.collection("user").add({
-            data: {
-                ...userInfo
-            }
-        })
+        await updateUserInfo()
     }
-    app.globalData.userInfo = userInfo
-    if (userInfo.roomID) {
-        wx.redirectTo({
-            url: '/pages/main/index',
-        })
-    } else {
-        wx.redirectTo({
-            url: '/pages/room_select/index',
-        })
+    if (!userInfo) {
+        try {
+            userInfo = await getUserInfoFromWX()
+        } catch (err) {
+
+        }
+        if (userInfo) {
+            await db.collection("user").add({
+                data: {
+                    ...userInfo
+                }
+            })
+        }
+    } else if (!userInfo.nickName) {
+        let _userInfo
+        try {
+            _userInfo = await getUserInfoFromWX()
+        } catch (err) {}
+        if (_userInfo) {
+            await db.collection("user").where({
+                _openid: appid
+            }).update({
+                data: {
+                    ..._userInfo
+                }
+            })
+            userInfo = {
+                ...userInfo,
+                ..._userInfo
+            }
+        }
+    }
+    return {
+        openid,
+        appid,
+        ...userInfo
     }
 }

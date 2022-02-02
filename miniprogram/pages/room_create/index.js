@@ -1,4 +1,4 @@
-const { login } = require("../../utils/user")
+const { updateUserInfo,getUserInfo } = require("../../utils/user")
 
 //index.js
 const app = getApp()
@@ -8,10 +8,19 @@ Page({
 
   },
   async onSubmit(e) {
-    const { name } = e.detail.value
+    const userInfo = await getUserInfo()
+    if (!userInfo.nickName) {
+      wx.navigateTo({
+        url: '/pages/auth/index',
+      })
+      return
+    }
+    const {
+      name
+    } = e.detail.value
     if (!name) {
       wx.showToast({
-        title: '请输入名称',
+        title: 'Please input name',
         icon: "none"
       })
       return
@@ -24,13 +33,16 @@ Page({
     await db.collection("user").where({
       _openid: app.globalData.appid
     }).update({
-      data:{
-        roomID:res._id
+      data: {
+        roomID: res._id
       }
     })
     wx.showToast({
-      title: '创建成功',
+      title: 'Create success',
     })
-    login()
+    await updateUserInfo()
+    wx.reLaunch({
+      url: '/pages/main/index',
+    })
   }
 })

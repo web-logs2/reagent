@@ -1,9 +1,13 @@
 @import "../../style/iconfont/iconfont.wxss";
 
 .container {
+  width: 100vw;
   height: 344rpx;
   background: linear-gradient(107.16deg, #58A6FF -9.45%, #5ECFEE 85.23%);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title{
@@ -29,9 +33,17 @@
   display: flex;
   align-items: center;
   padding-left: 50rpx;
-  padding-right: 50rpx;
   box-sizing: border-box;
   font-size: 16px;
+}
+
+
+.scan {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 20rpx;
+  padding-right: 50rpx;
 }
 
 .back {
@@ -48,8 +60,7 @@
   color: #D2D2D2;
 }
 .iconsearch {
-  width: 14px;
-  height: 14px;
+  font-size: 18px;
   margin-right: 10px;
   color:#D2D2D2;
 }

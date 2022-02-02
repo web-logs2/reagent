@@ -1,0 +1,6 @@
+<view class="banner">
+  <image style="width:100%;height:100%" src="./banner.png" />
+</view>
+<button open-type="getUserInfo" bindgetuserinfo="bindgetuserinfo">
+Login authorization</button>
+<button class="ghost" bindtap="onCancel">Cancel</button>

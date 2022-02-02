@@ -1,0 +1,14 @@
+<head_bar title="{{title}}" showSearch="{{false}}" />
+<view class="content">
+    <view wx:for="{{edit_info}}" class="row">
+        <view>
+            <text class="label">{{item.label}}</text>
+        </view>
+        <input wx:if="{{item.type=='text'}}" class="input" data-field="{{item.name}}" value="{{formData[item.name]}}" bindinput="formInputChange"  />
+        <image wx:if="{{item.type=='image'}}" data-field="{{item.name}}" src="{{formData[item.name]||'./upload.png'}}" class="image-upload" bindtap="onImageUpload" />
+        <mp-checkbox-group  class="checkbox-group" multi="{{false}}" data-field="{{item.name}}" bindchange="formInputChange">
+            <mp-checkbox wx:for="{{item.values}}" wx:for-item="checkItem" wx:key="value" label="{{checkItem}}" value="{{checkItem}}" checked="{{checkItem==(formData[item.name]||item.values[0])}}"></mp-checkbox>
+        </mp-checkbox-group>
+    </view>
+    <button class="submit" type="primary" bindtap="onSubmit">Submit</button>
+</view>

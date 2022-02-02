@@ -17,7 +17,7 @@ Component({
         currentTab:tab
       })
       if(tab=="home"){
-        wx.redirectTo({
+        wx.reLaunch({
           url: `/pages/main/index`,
         })
       }

@@ -1,0 +1,54 @@
+@import "../../style/base.wxss";
+.banner {
+  width: 572rpx;
+  height: 554rpx;
+  margin-left: 58rpx;
+  margin-top: 200rpx;
+  margin-bottom: 80rpx;
+}
+
+button {
+  margin-top:20px;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.item {
+  width: 150rpx;
+  height: 170rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.item .item-img {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+}
+.item .item-text{
+  font-size: 10px;
+  line-height: 12px;
+  color: #6A6F7D;
+  margin-top:2px
+}
+.label {
+  color: #36455A;
+  margin-left: 10px;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.qrimg {
+  width: 500rpx;
+  height: 500rpx;
+}
+.qr-wrapper {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

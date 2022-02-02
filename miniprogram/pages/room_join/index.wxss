@@ -1,0 +1,16 @@
+@import "../../style/base.wxss";
+.banner{
+  width: 572rpx;
+  height: 554rpx;
+  margin-top: 300rpx;
+  margin-left: 60rpx;
+  margin-bottom: 80rpx;
+}
+button {
+  margin-top:20px;
+}
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

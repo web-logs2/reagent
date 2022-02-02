@@ -1,10 +1,20 @@
-<view class="container">
-  <view wx:if="{{showBack}}" class="back" bindtap="onBack">
-    <view class="iconfont iconarrow-left-bold" />
+<sticky disabled="{{disableSticky}}" offset-top="{{showBack?0:-50}}">
+  <view class="container">
+    <view wx:if="{{showBack}}" class="back" bindtap="onBack">
+      <view class="iconfont iconarrow-left-bold" />
+    </view>
+    <text class="title">{{title}}</text>
+    <view wx:if="{{searchStatus=='show'||searchStatus=='input'}}" class="search_bar">
+      <text class="iconfont iconsearch" />
+      <view class="search_input" wx:if="{{searchStatus=='show'}}" bindtap="goSearch">
+        <text class="placeholder">Search</text>
+      </view>
+      <input class="search_input" wx:if="{{searchStatus=='input'}}"  bindinput="onSearchInput" placeholder="Search" placeholder-class="placeholder" />
+      <view class="scan" bindtap="onScan">
+        <image style="width:50rpx;height:50rpx" src="./scan-code.png" />
+      </view>
+    </view>
+    <slot />
   </view>
-  <text class="title">{{title}}</text>
-  <view wx:if="{{showSearch}}" class="search_bar">
-    <text class="iconfont iconsearch" />
-    <input class="search_input" bindinput="onSearchInput" placeholder="Search" placeholder-class="placeholder" />
-  </view>
-</view>
+</sticky>
+

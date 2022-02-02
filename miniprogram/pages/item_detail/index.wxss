@@ -1,0 +1,70 @@
+@import "../../style/base.wxss";
+
+.head {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+}
+
+.edit {
+  width: 70rpx;
+  height: 80rpx;
+  position: absolute;
+  bottom: 50rpx;
+  right: 50rpx;
+}
+
+.info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-right: 10px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.title2 {
+  font-size: 16px;
+}
+
+.title-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.content {
+  padding: 20px;
+}
+
+.thumb {
+  width: 250rpx;
+  height: 250rpx;
+  margin-right: 60rpx;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+
+.item-label {
+  font-weight: bold;
+  font-size: 18px;
+}
+.item-text {
+  font-size: 16px;
+}
+.title-state-Normal {
+  color:#2EC28D;
+}
+.title-state-Low {
+  color:#FF5F04;
+}
+.title-state-Run,.title-state-Breakdown {
+  color:#A61400;
+}

@@ -1,36 +1,37 @@
-@import "../../style/iconfont/iconfont.wxss";
-.content {
-  flex:1;
-  background: #FBFDFF;
+@import "../../style/base.wxss";
+
+.avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 80rpx;
+  margin-top: 90rpx;
 }
-.head {
-  height: 344rpx;
-  background: linear-gradient(107.16deg, #58A6FF -9.45%, #5ECFEE 85.23%);
+.name{
+  font-size: 23px;
+  line-height: 27px;
+  color: #FFFFFF;
 }
-.kinds {
-  display: flex;
-  flex-direction: column;
-  padding: 0 10px;
-}
-.type-item {
-  height: 138rpx;
-  background-color: #fff;
-  box-shadow: 4px 6px 19px rgba(141, 141, 141, 0.15);
-  border-radius: 3px;
+
+.item-list {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+}
+.item {
+  width: 187.5rpx;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  text-align: center;
-  transition: all 0.2s;
-  padding: 0 30rpx;
-  margin: 20rpx;
+  justify-content: center;
 }
-.type-item .iconfont{
-  font-size: 60rpx;
-  color: #58A6FF;
-}
-.type-item-text{
-  font-size: 14px;
+.item .iconfont {
+  font-size: 50rpx;
   color: #6A6F7D;
-  margin-left: 16rpx;
+}
+.item .item-text{
+  font-size: 10px;
+  line-height: 12px;
+  color: #6A6F7D;
+  margin-top:2px
 }

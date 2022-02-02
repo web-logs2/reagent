@@ -1,2 +1,11 @@
-<head_bar title="hi, {{userInfo.nickName}}" showSearch="{{false}}" />
+<head_bar showSearch="{{false}}">
+    <image class="avatar" src="{{userInfo.avatarUrl}}" />
+    <text class="name">{{userInfo.nickName}}</text>
+</head_bar>
+<view class="item-list">
+    <view wx:for="{{items}}" class="item" bindtap="onItemTap" data-action="{{item.action}}">
+        <view class="iconfont {{item.icon}}"></view>
+        <text class="item-text">{{item.text}}</text>
+    </view>
+</view>
 <bottom_menu currentTab="user" />

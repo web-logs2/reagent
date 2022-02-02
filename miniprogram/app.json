@@ -1,12 +1,17 @@
 {
   "pages": [
-    "pages/index/index",
+    "pages/entry/index",
+    "pages/search_result/index",
+    "pages/item_edit/index",
+    "pages/item_detail/index",
+    "pages/user/index",
+    "pages/auth/index",
     "pages/main/index",
+    "pages/room_join/index",
+    "pages/room_detail/index",
     "pages/room_select/index",
     "pages/room_create/index",
-    "pages/kind_select/index",
-    "pages/reagent_edit/index",
-    "pages/user/index"
+    "pages/kind_select/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -17,5 +22,8 @@
     "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json",
-  "style": "v2"
+  "style": "v2",
+  "useExtendedLib": {
+    "weui": true
+  }
 }

@@ -1,10 +1,9 @@
-<head_bar title="化学实验室" />
+<head_bar title="Chemistry Lab" searchStatus="show" bindsearchinput="onSearch" disableSticky />
 <view class="type-bar">
-  <view wx:for="{{kinds}}" class="type-item {{index===currentKind?'active':''}}" bindtap="onKindChange"
-    data-index="{{index}}">
+  <view wx:for="{{kinds}}" class="type-item" bindtap="goSearch"
+    data-kind="{{item.type}}">
     <view class="iconfont {{item.icon}}"></view>
     <text class="type-item-text">{{item.text}}</text>
   </view>
 </view>
-<reagent_item wx:for="{{items}}" />
 <bottom_menu />
