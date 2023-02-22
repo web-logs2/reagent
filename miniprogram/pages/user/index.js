@@ -1,7 +1,3 @@
-const {
-  getUserInfo
-} = require("../../utils/user")
-
 const app = getApp()
 
 Page({
@@ -14,12 +10,8 @@ Page({
     }, ]
   },
   onLoad() {
-    this.fetchUser()
-  },
-  async fetchUser() {
-    const userInfo = await getUserInfo()
     this.setData({
-      userInfo
+        userInfo: getApp().globalData.user
     })
   },
   async onItemTap(e) {
@@ -34,7 +26,7 @@ Page({
     }
   },
   async checkUser(){
-    const userInfo=await getUserInfo()
+    const userInfo= getApp().globalData.user
     if (!userInfo.roomID) {
       wx.showModal({
         title: 'Welcome',

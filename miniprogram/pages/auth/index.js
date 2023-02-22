@@ -1,5 +1,3 @@
-import { login } from "../../utils/user"
-
 Page({
   data: {
   },

@@ -10,6 +10,6 @@
 <button class="danger" bindtap="onLeave">Leave out</button>
 <modal  confirm-text="confirm"  hidden="{{qrModalHidden}}" bindconfirm="modalHide" no-cancel="{{true}}">
   <view class="qr-wrapper">
-    <image class="qrimg" src="{{qrInfo.img}}" />
+    <image wx:if="{{room_info._id}}" class="qrimg" src="https://reagent-assets2.city-servicer.com/api/wx/qr_code?id={{room_info._id}}" />
   </view>
 </modal>

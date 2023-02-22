@@ -3,7 +3,7 @@
 </head_bar>
 <view class="content">
     <view class="head">
-        <image class="thumb" src="{{info.thumbnail}}"></image>
+        <image wx:if="{{info.thumbnail}}" class="thumb" src="{{info.thumbnail}}?imageView2/1/w/200/h/200/q/75"></image>
         <view class="info">
             <text class="title">{{info.chinese_name}}</text>
             <text class="title2">{{info.english_name}}</text>
@@ -17,4 +17,6 @@
         <text class="item-label">{{item.k}}</text>
         <text class="item-text">{{item.v}}</text>
     </view>
+    <button style="margin-top:20px" class="ghost" bindtap="onEdit">Edit</button>
+    <button  style="margin-top:20px" class="danger" bindtap="onDelete">Delete</button>
 </view>

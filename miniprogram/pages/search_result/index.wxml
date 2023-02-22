@@ -3,14 +3,14 @@
   <view class="item-list">
     <view class="item" wx:for="{{items}}" bindtap="onItemTap" data-index="{{index}}">
       <view class="item-img-wrapper">
-        <image class="item-img" src="{{item.info.thumbnail}}"></image>
+        <image wx:if="{{item.info.thumbnail}}" class="item-img" src="{{item.info.thumbnail}}?imageView2/1/w/100/h/100/q/75"></image>
       </view>
       <view class="info">
         <text class="title">{{item.info.chinese_name}}</text>
         <text class="title2">{{item.info.english_name}}</text>
         <view class="title-row">
           <text class="title-state-{{item.info.state||'Normal'}}">{{item.info.state||'Normal'}}</text>
-            <text>{{item.info.size}}</text>
+            <text>{{item.info.size||''}}</text>
         </view>
       </view>
     </view>

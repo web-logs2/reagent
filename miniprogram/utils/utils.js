@@ -13,8 +13,3 @@ export function debounce(fn, wait) {
   }
   return debounced;
 }
-
-export function getThumb(src,width,height){
-  const matched=src.match(/\.([\w-]+)\/(.*)/)
-  return `https://${matched[1]}.tcb.qcloud.la/${matched[2]}?imageMogr2/thumbnail/${width||100}x${height||100}`
-}

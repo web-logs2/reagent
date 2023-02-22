@@ -1,5 +1,4 @@
-import url from 'url'
-import querystring from 'querystring'
+import querystring from 'qs'
 
 
 export function isTopPage() {
@@ -10,8 +9,8 @@ export function isTopPage() {
 export function getQuery(str) {
   let query = {}
   try {
-    const u = url.parse(str)
-    query = querystring.parse(u.query)
+    const u =  new URL(str)
+    query = querystring.parse(u.search)
   } catch (err) {
     //
   }

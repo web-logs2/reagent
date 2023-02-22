@@ -1,6 +1,6 @@
 {
   "component": true,
   "usingComponents": {
-    "sticky":"@miniprogram-component-plus/sticky"
+    "sticky":"../../miniprogram_npm/@miniprogram-component-plus/sticky"
   }
 }

@@ -1,7 +1,4 @@
 import {kinds} from '../../constance/kind'
-import { getUserInfo } from '../../utils/user'
-const app = getApp()
-const db = wx.cloud.database()
 Page({
   data: {
     currentKind: 'reagent',
@@ -12,7 +9,7 @@ Page({
     this.checkUser()
   },
   async checkUser(){
-    const userInfo=await getUserInfo()
+    const userInfo= getApp().globalData.user
     if (!userInfo.roomID) {
       wx.showModal({
         title: 'Welcome',
@@ -29,13 +26,6 @@ Page({
       })
       return
     }
-  },
-  onItemTap(e) {
-    const index = e.currentTarget.dataset.index
-    const item = this.data.items[index]
-    wx.navigateTo({
-      url: `/pages/item_detail/index?id=${item._id}`,
-    })
   },
   goSearch(e) {
     const {kind} = e.currentTarget.dataset
