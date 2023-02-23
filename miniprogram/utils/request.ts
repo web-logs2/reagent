@@ -62,6 +62,10 @@ export function upload(filePath: string) {
             },
             success: function (res) {
                 if (res.statusCode != 200) {
+                    wx.showToast({
+                        icon:"none",
+                        title: res.data.toString()
+                    })
                     reject(res.data)
                 } else {
                     resolve(res.data)
