@@ -50,13 +50,18 @@ export function request(opts: RequestOptions) {
     })
 }
 
-export function upload(filePath: string) {
+export async function upload(filePath: string) {
+    const token = await request({
+        url:"/upload/token"
+    })
     return new Promise((resolve, reject) => {
         wx.uploadFile({
-            url: `${API_ENDPOINT}/upload`,
+            url: `https://up-z2.qiniup.com`,
             filePath,
             name: "file",
-            formData: {},
+            formData: {
+                token: token,
+            },
             header: {
                 "Content-Type": "multipart/form-data"
             },
@@ -68,7 +73,9 @@ export function upload(filePath: string) {
                     })
                     reject(res.data)
                 } else {
-                    resolve(res.data)
+                    const {key}  = JSON.parse(res.data)
+                    const u=`https://reagent-assets.city-servicer.com/${key}`
+                    resolve(u)
                 }
             },
             fail: function (e) {
